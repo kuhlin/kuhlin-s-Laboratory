@@ -15,3 +15,5 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+//User defined route, dige: 
+Route::get('usuarios', array('uses' => 'UsuariosController@mostrarUsuarios'));
