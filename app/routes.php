@@ -1,19 +1,18 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
+  |--------------------------------------------------------------------------
+  | Application Routes
+  |--------------------------------------------------------------------------
+  |
+  | Here is where you can register all of the routes for an application.
+  | It's a breeze. Simply tell Laravel the URIs it should respond to
+  | and give it the Closure to execute when that URI is requested.
+  |
+ */
 
-Route::get('/', function()
-{
-	return Redirect::to('usuarios');
+Route::get('/', function() {
+    return Redirect::to('usuarios');
 });
 //User defined route, dige: 
 Route::get('usuarios', array('uses' => 'UsuariosController@mostrarUsuarios'));
@@ -27,8 +26,12 @@ Route::post('usuarios/crear', array('uses' => 'UsuariosController@crearUsuario')
 // como podemos observar es para recibir peticiones POST
 
 // (Second Step MVC) 
-Route::get('usuarios/{id}', array('uses'=>'UsuariosController@verUsuario'));
+Route::get('usuarios/{id}', array('uses' => 'UsuariosController@verUsuario'));
 // esta ruta contiene un parámetro llamado {id}, que sirve para indicar el id del usuario que deseamos buscar
 // este parámetro es pasado al controlador, podemos colocar todos los parámetros que necesitemos
 // solo hay que tomar en cuenta que los parámetros van entre llaves {}
 // si el parámetro es opcional se colocar un signo de interrogación {parámetro?}
+
+// Server side Pagining
+//Route::resource('users', 'UsersController');
+Route::get('datatables', array('as'=>'datatables', 'uses'=>'UsuariosController@getDatatable'));

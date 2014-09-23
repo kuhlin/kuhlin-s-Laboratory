@@ -6,6 +6,7 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*"
+                ,"chumper/datatable": "2.*"
 	},
 	"autoload": {
 		"classmap": [
@@ -34,4 +35,5 @@
 		"preferred-install": "dist"
 	},
 	"minimum-stability": "stable"
+        
 }

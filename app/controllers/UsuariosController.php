@@ -25,6 +25,21 @@ class UsuariosController extends BaseController {
         //y también pasa como parámetro los datos que queramos pasar a la vista. 
         // En este caso le estamos pasando un array con todos los usuarios
     }
+    
+    public function getDatatable() {
+        return Datatable::collection(
+                                Usuario::all(
+                                        array('id', 'nombre', 'apellido', 'created_at')
+                                )
+                        )
+                        ->showColumns('id', 'nombre', 'apellido', 'created_at')
+                        ->searchColumns('nombre', 'apellido', 'created_at')
+                        ->orderColumns('id', 'nombre', 'apellido', 'created_at')
+                        ->make();
+    }
+    
+    
+    
 
     /**
      * Muestra formulario para crear Usuario (Second Step MVC)
