@@ -1,0 +1,3 @@
+
+-- Paginar Datatables en parte de servidor
+http://wern-ancheta.com/blog/2014/08/10/using-datatables-with-laravel/
