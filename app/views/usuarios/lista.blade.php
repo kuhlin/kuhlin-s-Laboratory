@@ -54,16 +54,18 @@ Lista de usuarios
 </div>
 {{ HTML::link('usuarios/nuevo', 'Crear Usuario'); }}
 
-<ul>
+<!--<ul>
     @foreach($usuarios as $usuario)
     <li>
         {{ HTML::link( 'usuarios/'.$usuario->id , $usuario->nombre.' '.$usuario->apellido ) }}
 
     </li>
     @endforeach
-</ul>
+</ul>-->
 {{ Datatable::table()
-    ->addColumn('id', 'nombre', 'apellido', 'created_at')  
+    ->addColumn('nombre', 'apellido', 'created_at','Action')  
+    ->setOptions('sPaginationType', array('simple_numbers'))
+    //->setCallbacks('fnServerParams', 'function ( aoData ) {aoData.push( { "name": "params", "value": prepareJSONParams() } );}')
     ->setUrl(route('datatables'))
     ->render() }} 
 

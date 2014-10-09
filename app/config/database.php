@@ -81,17 +81,7 @@ return array(
 			'username' => 'root',
 			'password' => '',
 			'prefix'   => '',
-		),
-            'contacto' => array(
-			'driver'    => 'sqlsrv',
-			'host'      => 'ES-MAD-SQL-002',
-			'database'  => 'sac',
-			'username'  => 'adminPanelUser',
-			'password'  => '4dm1nP4n3lUs3r#01',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
-                ),
+		),            
 
 	),
 

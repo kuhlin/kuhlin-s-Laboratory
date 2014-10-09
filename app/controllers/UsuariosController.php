@@ -38,22 +38,22 @@ class UsuariosController extends BaseController {
           ->orderColumns('id', 'nombre', 'apellido', 'created_at')
           ->make();
          */
-        return Datatable::query(DB::table('clients'))
-                        ->showColumns('first_name', 'last_name', 'company_name')
+        return Datatable::query(DB::table('usuarios'))
+                        ->showColumns('nombre', 'apellido', 'created_at')
                         ->addColumn('dropdown', function ( $model ) {
-
-                            return '<a href="' . URL::to('client/' . $model->id) . '"> <i class=" btn btn-success fa fa-folder-open-o"></i></a>
-                    <a href="' . URL::to('client/' . $model->id . '/edit') . '"> <i class="btn btn-info fa fa-pencil-square-o"></i></a>
-                    <a class="js-confirm" href="' . URL::to('client/' . $model->id . '/destroy') . '"> <i class="btn btn-danger fa fa-trash-o"></i></a>';
+                            return '<a href="' . URL::to('usuarios/' . $model->id) . '"> <i class=" btn btn-success fa fa-folder-open-o"></i></a>
+                                    <a href="' . URL::to('usuarios/' . $model->id . '/edit') . '"> <i class="btn btn-info fa fa-pencil-square-o"></i></a>
+                                    <a class="js-confirm" href="' . URL::to('usuarios/' . $model->id . '/destroy') . '"> <i class="btn btn-danger fa fa-trash-o"></i></a>';
                         })
-                        ->searchColumns('first_name', 'last_name', 'company_name')
-                        ->orderColumns('first_name', 'last_name', 'company_name')
+                        ->searchColumns('nombre', 'apellido', 'created_at')
+                        ->orderColumns('nombre', 'apellido', 'created_at')                        
                         ->make();
     }
-    
-     /*** Consulta que devuelve los resultados en formato JSON para Datatables ***/
-        public function list_JSON($params){
-            return Datatable::query(DB::table('estado_list_json'))
+
+    /*     * * Consulta que devuelve los resultados en formato JSON para Datatables ** */
+
+    public function list_JSON($params) {
+        return Datatable::query(DB::table('estado_list_json'))
                         ->showColumns('Telefono', 'Email', 'Estado')
                         ->addColumn('dropdown', function ( $model ) {
 
@@ -63,8 +63,8 @@ class UsuariosController extends BaseController {
                         })
                         ->searchColumns('Telefono', 'Email')
                         ->orderColumns('Telefono', 'Email')
-                        ->make();           
-        }
+                        ->make();
+    }
 
     /**
      * Muestra formulario para crear Usuario (Second Step MVC)
