@@ -76,10 +76,10 @@ return array(
 
 		'sqlsrv' => array(
 			'driver'   => 'sqlsrv',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
+			'host'     => '10.140.83.140\SQLDIGE',
+			'database' => 'Categories',
+			'username' => 'sa',
+			'password' => 'CocacolaGeorge',
 			'prefix'   => '',
 		),            
 

@@ -64,21 +64,22 @@ if (Config::get('database.log', false))
 
 
 Route::get('/', function() {
-    return Redirect::to('usuarios');
+    //Set the default startup page
+    return Redirect::to('api/dropdown');
 });
 //User defined route, dige: 
-Route::get('usuarios', array('uses' => 'UsuariosController@mostrarUsuarios'));
+////Route::get('usuarios', array('uses' => 'UsuariosController@mostrarUsuarios'));
 
 // (Second Step MVC)
-Route::get('usuarios/nuevo', array('uses' => 'UsuariosController@nuevoUsuario'));
+////Route::get('usuarios/nuevo', array('uses' => 'UsuariosController@nuevoUsuario'));
 
 // (Second Step MVC) 
-Route::post('usuarios/crear', array('uses' => 'UsuariosController@crearUsuario'));
+////Route::post('usuarios/crear', array('uses' => 'UsuariosController@crearUsuario'));
 // esta ruta es a la cual apunta el formulario donde se introduce la información del usuario
 // como podemos observar es para recibir peticiones POST
 
 // (Second Step MVC) 
-Route::get('usuarios/{id}', array('uses' => 'UsuariosController@verUsuario'));
+////Route::get('usuarios/{id}', array('uses' => 'UsuariosController@verUsuario'));
 // esta ruta contiene un parámetro llamado {id}, que sirve para indicar el id del usuario que deseamos buscar
 // este parámetro es pasado al controlador, podemos colocar todos los parámetros que necesitemos
 // solo hay que tomar en cuenta que los parámetros van entre llaves {}
@@ -86,4 +87,12 @@ Route::get('usuarios/{id}', array('uses' => 'UsuariosController@verUsuario'));
 
 // Server side Pagining
 //Route::resource('users', 'UsersController');
-Route::get('datatables', array('as'=>'datatables', 'uses'=>'UsuariosController@getDatatable'));
+////Route::get('datatables', array('as'=>'datatables', 'uses'=>'UsuariosController@getDatatable'));
+
+
+Route::get('api/dropdown', function(){
+  $input = Input::get('option');
+	$carbrands = Carbrands::g($input);
+	$carmodels = $carbrands->carmodels();
+	return Response::Carbrands($carmodels->get(['id','name']));
+});
