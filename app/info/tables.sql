@@ -62,36 +62,3 @@ INSERT INTO `forge`.`carModels` (`id`, `maker_id`, `name`, `description`, `creat
 (8, 3, 'SLK 500', '', '2013-03-11 22:36:47', '2013-03-11 22:36:47'),
 (9, 3, 'C300', '', '2013-03-11 22:36:50', '2013-03-11 22:36:50'),
 (10, 2, 'another item', '', '2013-03-11 22:36:52', '2013-03-11 22:36:52');
-
-
---
--- Table structure for table `cars` -- putting all together
---
-CREATE TABLE `cars` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `brand_id` int(10) unsigned NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
-
---
--- Dumping data for table `cars`
---
-
-INSERT INTO `cars` (`id`, `brand_id`, `name`, `description`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Toyota', 'Toyota cars', '2013-03-11 00:00:00', '2013-03-11 00:00:00'),
-(2, 2, 'Honda', 'Honda cars', '2013-03-11 00:00:00', '2013-03-11 00:00:00'),
-(3, 3, 'Mercedes', 'Mercedes cars', '2013-03-11 00:00:00', '2013-03-11 00:00:00'),
-(4, 2, 'Honda S2000', '', '2013-03-11 22:32:07', '2013-03-11 22:32:07'),
-(5, 2, 'Civic', '', '2013-03-11 22:32:46', '2013-03-11 22:32:46'),
-(6, 2, 'Fit', '', '2013-03-11 22:34:35', '2013-03-11 22:34:35'),
-(7, 1, 'asdf asdf', '', '2013-03-11 22:35:31', '2013-03-11 22:35:31'),
-(8, 1, 'Yaris', '', '2013-03-11 22:36:01', '2013-03-11 22:36:01'),
-(9, 1, 'Corolla', '', '2013-03-11 22:36:23', '2013-03-11 22:36:23'),
-(10, 1, 'Camry', '', '2013-03-11 22:36:31', '2013-03-11 22:36:31'),
-(11, 3, 'SLK 500', '', '2013-03-11 22:36:47', '2013-03-11 22:36:47'),
-(12, 3, 'C300', '', '2013-03-11 22:36:50', '2013-03-11 22:36:50'),
-(13, 2, 'another item', '', '2013-03-11 22:36:52', '2013-03-11 22:36:52');
