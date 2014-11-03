@@ -90,9 +90,15 @@ Route::get('/', function() {
 ////Route::get('datatables', array('as'=>'datatables', 'uses'=>'UsuariosController@getDatatable'));
 
 
-Route::get('api/dropdown', function(){
-  $input = Input::get('option');
-	$carbrands = Carbrands::g($input);
-	$carmodels = $carbrands->carmodels();
-	return Response::Carbrands($carmodels->get(['id','name']));
-});
+//Route::get('api/dropdown', function(){
+//  $input = Input::get('option');
+//	$carbrands = Carbrands::g($input);
+//	$carmodels = $carbrands->carmodels();
+//	return Response::Carbrands($carmodels->get(['id','name']));
+//});
+
+
+// Listado todas categorias
+Route::get('cattree', array('uses' => 'CattreeController@mostrarCattree'));
+Route::get('catoperation/get_node', array('uses' => 'CattreeController@get_node'));
+
