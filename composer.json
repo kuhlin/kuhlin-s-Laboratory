@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "6.20.12"
+		"laravel/framework": "6.20.14"
                 ,"chumper/datatable": "2.*"
                 ,"barryvdh/laravel-debugbar" : "1.7.7" 
 	},
